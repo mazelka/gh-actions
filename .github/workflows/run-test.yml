@@ -7,7 +7,8 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
         with:
-          sparse-checkout: second-action
+          sparse-checkout: |
+            second-action
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
