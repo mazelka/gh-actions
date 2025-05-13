@@ -6,14 +6,13 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            second-action
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
           node-version: 18
       - name: Install dependencies
+        working-directory: ./second-action
         run: npm ci
       - name: Run tests
+        working-directory: ./second-action
         run: npm test
